@@ -1,0 +1,27 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3361
+
+Indent Guides is a plugin for visually displaying indent levels in gvim.
+
+NOTE 1: 
+The plugin only works in gvim at the moment. Support for terminal vim is planned for a future release.
+
+NOTE 2: 
+The plugin is untested on Windows and I've just been told it doesn't work. Please check back regularly for a fix.
+
+Features:
+- Can detect both tab and space indent styles.
+- Automatically inspects your colorscheme and picks appropriate colors.
+- Will highlight indent levels with alternating colors.
+
+Usage:
+The default mapping to toggle the plugin is <Leader>ig
+
+Github:
+https://github.com/nathanaelkane/vim-indent-guides
+
+Screenshots:
+https://dl.dropbox.com/u/1019520/vim-indent-guides/rdark.png 
+https://dl.dropbox.com/u/1019520/vim-indent-guides/bclear.png 
+https://dl.dropbox.com/u/1019520/vim-indent-guides/clarity.png
+https://dl.dropbox.com/u/1019520/vim-indent-guides/moss.png
+
