@@ -1,4 +1,4 @@
-*indent_guides.txt*  A plugin for visually displaying indent levels in vim.
+*indent_guides.txt*  A plugin for visually displaying indent levels in Vim.
 
                                                                  *indent-guides*
       ____           __            __     ______       _      __
@@ -9,8 +9,8 @@
 
 
 Author:      Nate Kane <nathanaelkane AT gmail DOT com>
-Version:     1.1
-Last Change: 29 Dec 2010
+Version:     1.2
+Last Change: 10 Jan 2011
 
 ==============================================================================
 CONTENTS                                                *indent-guides-contents*
@@ -27,16 +27,20 @@ CONTENTS                                                *indent-guides-contents*
 ==============================================================================
 1. INTRODUCTION                                     *indent-guides-introduction*
 
-Indent Guides is a plugin for visually displaying indent levels in vim.
+Indent Guides is a plugin for visually displaying indent levels in Vim.
+
+This plugin should work with gVim out of the box, no configuration needed.
 
 Features:~
   * Can detect both tab and space indent styles.
-  * Automatically inspects your colorscheme and picks appropriate colors (gvim
+  * Automatically inspects your colorscheme and picks appropriate colors (gVim
     only).
   * Will highlight indent levels with alternating colors.
-  * Full support for gvim and basic support for terminal vim.
-  * Seems to work on Windows gvim 7.3 (haven't done any extensive tests
+  * Full support for gVim and basic support for Terminal Vim.
+  * Seems to work on Windows gVim 7.3 (haven't done any extensive tests
     though).
+  * Customizable size for indent guides, eg. skinny guides (soft-tabs only).
+  * Customizable start indent level.
 
 ==============================================================================
 2. COMMANDS                                             *indent-guides-commands*
@@ -61,6 +65,7 @@ Features:~
 ------------------------------------------------------------------------------
                                                  *'indent_guides_indent_levels'*
 Use this option to control how many indent levels to display guides for.
+
 Default: 30. Values: integer.
 >
   let g:indent_guides_indent_levels = 30
@@ -71,6 +76,7 @@ Default: 30. Values: integer.
 Use this option to control whether or not the plugin automatically calculates
 the highlight colors. Will use the current colorscheme's background color as a
 base color.
+
 Default: 1. Values: 0 or 1.
 >
   let g:indent_guides_auto_colors = 1
@@ -88,9 +94,36 @@ in an autocmd.
                                           *'indent_guides_color_change_percent'*
 Use this option to control the percent at which the highlight colors will be
 lightened or darkened.
-Default: 0.05. Values: between 0 and 1.
+
+Default: 5 (5%). Values: between 0 and 100.
 >
-  let g:indent_guides_color_change_percent = 0.05
+  let g:indent_guides_color_change_percent = 5
+<
+
+------------------------------------------------------------------------------
+                                                    *'indent_guides_guide_size'*
+Use this option to customize the size of the indent guide. By default the
+value is set to 0, which will set the guide size to be the same as the
+|shiftwidth|. Setting this value to be larger than the |shiftwidth| is essentially
+the same as setting it to 0.
+
+A common use of this setting is to create skinny indent guides, which look
+great with a |shiftwidth| of 4 or more.
+
+NOTE: This option only works for soft-tabs (spaces) and not hard-tabs.
+
+Default: 0. Values: between 0 and |shiftwidth|.
+>
+  let g:indent_guides_guide_size = 1
+<
+
+------------------------------------------------------------------------------
+                                                   *'indent_guides_start_level'*
+Use this option to control which indent level to start showing guides from.
+
+Default: 1. Values: between 1 and g:|indent_guides_indent_levels|.
+>
+  let g:indent_guides_start_level = 2
 <
 
 ==============================================================================
@@ -148,7 +181,7 @@ Alternatively you can manually setup the highlight colors yourself, see
 
 Why did I build this plugin?~
   * I believe indent guides make nested code easier to read and understand.
-  * Other editors have them and it's high time vim did.
+  * Other editors have them and it's high time Vim did.
   * None of the existing indent guide plugins on the market suited my needs.
   * I wanted to learn me some VimL.
 
@@ -170,8 +203,12 @@ Bug reports, feedback, suggestions etc are welcomed.
 ==============================================================================
 7. CHANGELOG                                           *indent-guides-changelog*
 
+1.2~
+  * Customizable size for indent guides, eg. skinny guides (soft-tabs only).
+  * Customizable start indent level.
+  * Refactored some internal logic.
 1.1~
-  * Added basic support for terminal vim. See |indent-guides-terminal-vim| for
+  * Added basic support for Terminal Vim. See |indent-guides-terminal-vim| for
     more information.
   * Cut down on rgb to hex color conversions by adding a big dictionary of
     color names and hex codes.

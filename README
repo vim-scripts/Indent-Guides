@@ -8,6 +8,8 @@ FEATURES:
 - Will highlight indent levels with alternating colors.
 - Full support for gVim and basic support for Terminal Vim.
 - Seems to work on Windows gVim 7.3 (haven't done any extensive tests though).
+- NEW: Customizable size for indent guides, eg. skinny guides (soft-tabs only).
+- NEW: Customizable start indent level.
 
 USAGE:
 The default mapping to toggle the plugin is `<Leader>ig`
@@ -50,8 +52,5 @@ GITHUB:
 https://github.com/nathanaelkane/vim-indent-guides
 
 SCREENSHOTS:
-https://dl.dropbox.com/u/1019520/vim-indent-guides/rdark.png
-https://dl.dropbox.com/u/1019520/vim-indent-guides/bclear.png
-https://dl.dropbox.com/u/1019520/vim-indent-guides/clarity.png
-https://dl.dropbox.com/u/1019520/vim-indent-guides/moss.png
+http://nathanaelkane.imgur.com/indent_guides
 
