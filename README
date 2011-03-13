@@ -8,8 +8,9 @@ FEATURES:
 - Will highlight indent levels with alternating colors.
 - Full support for gVim and basic support for Terminal Vim.
 - Seems to work on Windows gVim 7.3 (haven't done any extensive tests though).
-- NEW: Customizable size for indent guides, eg. skinny guides (soft-tabs only).
-- NEW: Customizable start indent level.
+- Customizable size for indent guides, eg. skinny guides (soft-tabs only).
+- Customizable start indent level.
+- NEW: Highlight support for files with a mixture of tab and space indent styles.
 
 USAGE:
 The default mapping to toggle the plugin is `<Leader>ig`
@@ -23,6 +24,12 @@ Here's an example of how to define custom colors instead of using the ones the p
   let g:indent_guides_auto_colors = 0
   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+<
+
+Alternatively you can add the following lines to your colorscheme file.
+>
+  hi IndentGuidesOdd  guibg=red   ctermbg=3
+  hi IndentGuidesEven guibg=green ctermbg=4
 <
 
 TERMINAL VIM:
@@ -53,4 +60,3 @@ https://github.com/nathanaelkane/vim-indent-guides
 
 SCREENSHOTS:
 http://nathanaelkane.imgur.com/indent_guides
-
